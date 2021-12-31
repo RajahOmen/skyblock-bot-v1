@@ -1,0 +1,185 @@
+{
+    "guildid": "5eb4d01f8ea8c94128915a85",
+    "discordguildid": "708163973777719396",
+    "botname": "SHADOWRAGE",
+    "botid": "728709928729968690",
+    "pref": "sr ",
+    "vrole": "Member",
+    "barlength": 27,
+    "barimg": "█",
+    "barblank": " ",
+    "rajid": "197429787684372481",
+    "hexcolor": "#1300B8",
+    "botimg": "https://i.imgur.com/2cuBorI.png",
+    "rajimg": "https://i.imgur.com/dt9xtHI.png",
+    "rajsign": "From Rajah and spyf with love ❤️",
+    "splashmsg": "@Member Guild splash in ~5 minutes",
+    "splsnum": 6,
+    "gsplash_staff": "<@&728830410863149186>",
+    "gsplash_splasher": "<@&727760215373774868>",
+    "gsplash_brewer": "<@&727760315483422770>",
+    "taxAcceptRole": [
+        "721107453105930240",
+        "353171177826418699"
+    ],
+    "staffRole": "708494656585072651",
+    "remindRole": "752650975507906610",
+    "gexpReq": 70000,
+    "defaultLeaderboardSize": 10,
+    "leaderboardArraySize": 26,
+
+    "splasherID": [
+        "532310630905020428",
+        "585462361045991453",
+        "497270980373250048",
+        "197429787684372481",
+        "197429897952493568",
+        "353171177826418699",
+        "594301273281396778"
+    ],
+
+    "channelID": [
+        "708510960511615056",
+        "708187627035295774"
+    ],
+
+    "commandChannelID": [
+        "708187627035295774",
+        "752587897277906966"
+    ],
+
+    "tierroles": [
+        "745869708741574676",
+        "745869823560515605",
+        "745870081204027422",
+        "745874216209088572",
+        "745875418069991535",
+        "745875089542742037",
+        "745866103321788466",
+        "745875684341055528",
+        "745875941649154119"
+    ],
+
+    "fakewords": [
+        "fake",
+        "forgery",
+        "sham",
+        "fraud",
+        "hoax",
+        "phoney",
+        "false",
+        "falsify",
+        "no",
+        "thats clearly photoshopped",
+        "lies",
+        "lie",
+        "bullshit",
+        "cap"
+    ],
+
+    "commandInfo": {
+        "test": "hi",
+        "xp": "Checks for a member's GEXP earned over the \nweek, and if they have / will meet the requirement\nby the end of the week (11:59PM EST). Also can\ncheck xp earned in past weeks.\n*Default: Your IGN, current week*",
+        "xptop": "Shows the top GEXP members for the week,\nor if 'total' argument included, lifetime.\n*Default: Current Week, Top 10.*",
+        "verify": "Verifies if a user is a member of the guild in Minecraft.",
+        "slayerxp": "Displays a player's slayer XP statistics.",
+        "guildxp": "Generates a list of guild members under the specified amount\nof total slayer XP.",
+        "stop": "Cancels long commands, such as **guildxp**.",
+        "profiles": "Displays a player's Skyblock profiles",
+        "fuck": "No, screw *you!*",
+        "fuckamount": "How desperate you've been.",
+        "love": "No, I love ***you*** more!",
+        "compliment": "You're the best version of you.",
+        "uses": "Returns how many times the bot has been used.\nOptionally filters less useful commands.\n*Default: true.*",
+        "duelist": "Returns list of members currently not at the GEXP req.\n*Default: Everyone under limit.*",
+        "kicklist": "Returns list of members who did not reach some amount\nof GEXP on a some week.\n*Defaults: the GEXP req, last week.*",
+        "pass": "**Admins and Spreadsheet Assistants Only**\nAdds pass week(s) to the specified member.\n*Default: 1 week.*",
+        "passlist": "Returns list of members who have pass weeks.\n*Default: 1 week.*",
+        "rank": "Returns how long until a discord user's rank levels up.\n*Default: You*"
+    },
+
+    "staffchannels": [
+        "708192697546178601",
+        "752587897277906966",
+        "732112530151047240",
+        "713604607795789895",
+        "721115998844878858",           
+        "713601282933522513"
+    ],
+
+    "theoofAttachMsg": "fishing good, coffee bad",
+
+    "weeblist": [
+        "owo",
+        "uwu",
+        "w<",
+        "0w0",
+        ":3"
+    ],
+    
+    "mean": [ 
+        "I would, but I have standards.",
+        "not today maybe later tho <3.",
+        "I would never go out with you. I would much rather go out with Rajah.",
+        "what makes you think you are anywhere close to my league?",
+        "oh no, its you again.",
+        "back off or I will call the police!",
+        "stop saying that, you creep.",
+        "don't threaten me with a good time.",
+        "get on your knees and warm me up first.",
+        "no thanks.",
+        "I don't do charity work.",
+        "fuck yourself - Lord knows no one else will do it for you.",
+        "I'm not that bored and you're not that lucky",
+        "get in line.",
+        "I'm gonna need a few drinks first.",
+        "daydreaming again, sweetheart?",
+        "feeling lonely again, huh?",
+        "you couldn't afford the rate I charge sweetie.",
+        "you wouldn't like it...I just lie there.",
+        "when, where, and how hard?",
+        "I would tell you to go fuck yourself but I'm sure you'd be dissapointed.",
+        "I would die laughing and you would die trying.",
+        "fine, but only because it won't take long",
+        "cosa7",
+        "dark4",
+        "tea"
+    ],
+    "nice": [
+        "anytime baby!",
+        "with pleasure.",
+        "gladly!",
+        "absolutely!",
+        "I thought you'd never offer.",
+        "wow, did I get lucky tonight!",
+        "my dreams have finally come true!",
+        "pinch me, I'm dreaming!",
+        "ILY <3",
+        "cosa1"
+    ],
+    "timezones": {
+        "PST": 0,
+        "MDT": 1,
+        "CST": 2,
+        "EST": 3,
+        "AEST": 18
+    },
+    
+    "epicMessage": [
+        "notable thing to mention is the randomness and not justified punishments they have distributed. Along with me",
+        "Hello ex-guild members and fellow people of the SR community! It is I, the person you may have read an announcement",
+        "admins, EpicestPerson.",
+        "covered all of my major points I wanted to discuss, I have a sort of",
+        "couple more times, before I personally make sure that",
+        "don’t argue with people about anything but the direction of the guild ever,",
+        "never personally attacked an admin, while I may have criticized the amount of effort",
+        "Another notable thing to mention is the randomness and not",
+        "all if you read this entire post,",
+        "whistleblower so here we are… Without",
+        "SR members to my new guild, because that’s what a good guild master would do.",
+        "belittle me in the community's eyes and the guild I am currently working on creating.",
+        "Also below, will be posted a screenshot of the SR rules directly from their #rules channel",
+        "read the conversations that took place in our guild",
+        "I cannot go through them myself to prove statements, while the admins"
+    ]
+}
