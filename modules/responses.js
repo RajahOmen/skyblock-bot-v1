@@ -10,7 +10,7 @@ const weight = require(`./weightstuff.js`);
 // functions that do all the calculations, also speaks with hypixel and mojang apis.
 // doesn't use discord client, only main.js
 
-const hclient = new i.HypixelAPI('a172a278-6adf-4288-8f0d-90e3b87e4462');
+const hclient = new i.HypixelAPI('4a4ebeef-de16-4098-b0ec-be79ff5749d9');
 
 // variables and functions
 const delay = () => new Promise(resolve => setTimeout(resolve, 520));
@@ -314,6 +314,7 @@ function getUsername(uuid) {  //input is UUID, returns most recent username. for
           let username = recent.name;
           resolve(username);
        }).catch(err => {
+          console.log("ERROR: getUsername: " + uuid)
           reject(err);
        });
     })
@@ -900,28 +901,48 @@ function verify(msg, com) {
 
 function slayerxp(msg, com) {
 	const user = com[1];
-    i.MojangAPI.Mojang.getUUID(user, Date.now()).then(resolve => {
-        if (typeof(resolve) == "string") {
-            const uuid = resolve;
-            calc_max_xp(uuid).then(resolve => {
-            const xp = resolve;
-            const slayerEmbed = new i.Discord.MessageEmbed()
-                .setColor(v.hexcolor)
-                .setTitle(`Slayer XP Statistics`)
-                .setAuthor(user, `https://crafatar.com/avatars/${uuid}?size=128&default=MHF_Steve&overlay`)
-                .addFields(
-                    { name: `Total Slayer xp`, value: xp},
-                    { name: `Command WIP`, value: `Slayer XP breakdown coming soon™`}
-                )
-                .setFooter(v.rajsign, v.rajimg);
-            log(`${v.botname}: ${user} has ${xp} XP`)
-            msg.channel.send(slayerEmbed);
-        });
-        }
-    }, reject => {
-        log(`SlayerXP failed: ${reject}`);
-        msg.channel.send(errmsg);
-    });	
+    console.log("hi")
+    const slayerEmbed = new i.Discord.MessageEmbed()
+    .setColor(v.hexcolor)
+    .setTitle(`Slayer XP Statistics`)
+    .addFields(
+        { name: `Total Slayer xp`, value: "-5 + nice pb + bozo + L + ratio"},
+        { name: `Command WIP`, value: `Slayer XP breakdown never.`}
+    )
+    .setFooter(v.rajsign, v.rajimg);
+    msg.channel.send(slayerEmbed);
+    return;
+    try {
+        i.MojangAPI.Mojang.getUUID(user, Date.now()).then(resolve => {
+            console.log("hihi")
+            if (typeof(resolve) == "string") {
+                const uuid = resolve;
+                console.log("hihi")
+                calc_max_xp(uuid).then(resolve => {
+                console.log("hihdi")
+                const xp = resolve;
+                const slayerEmbed = new i.Discord.MessageEmbed()
+                    .setColor(v.hexcolor)
+                    .setTitle(`Slayer XP Statistics`)
+                    .setAuthor(user, `https://crafatar.com/avatars/${uuid}?size=128&default=MHF_Steve&overlay`)
+                    .addFields(
+                        { name: `Total Slayer xp`, value: xp},
+                        { name: `Command WIP`, value: `Slayer XP breakdown coming soon™`}
+                    )
+                    .setFooter(v.rajsign, v.rajimg);
+                log(`${v.botname}: ${user} has ${xp} XP`)
+                msg.channel.send(slayerEmbed);
+                });
+            }
+        }, reject => {
+            log(`SlayerXP failed: ${reject}`);
+            msg.channel.send(errmsg);
+        }).catch(error => {
+            console.log("Slayer XP error: " + error)
+        });	
+    } catch(error) {
+        console.log(error);
+    }
 };
 
 function guildxp(msg, com) {
@@ -1003,6 +1024,8 @@ function guildxp(msg, com) {
                         const sxp = xp.toString();
                         let entry = pentry.concat(i.sprintf(`%9s`, sxp));
                         namelist = namelist.concat(entry);
+                    }).catch(() => {
+                        console.log("ERROR: GETGUILD");
                     });
                 }
                 if (xp > maxslayer) {
@@ -1011,6 +1034,8 @@ function guildxp(msg, com) {
                         const names = result;
                         const name = names[names.length - 1];
                         maxslayeruser = name.name;
+                    }).catch(() => {
+                        console.log("ERROR: GETGUILD2");
                     });
                 }
             }
