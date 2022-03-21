@@ -1,9 +1,9 @@
 const i = require('./modules/index.js');
 const v = require(`./config.json`);
-const r = require('./modules/responses.js');
 const data = require('./modules/database.js');
 const tax = require('./modules/taxfunctions.js');
-const creds = require('./modules/creds.json')
+const r = require('./modules/responses.js');
+const creds = require('./creds.json')
 
 const client = new i.Discord.Client();
 
@@ -53,7 +53,7 @@ client.once('ready', () => {
 			if (diff > 604800000) { //end of week stuff
 				let newTime = oldTime + 604800000;
 				await r.writePastGEXPWeeks(oldTime);
-				await r.gexpPastSpreadsheet(oldTime);
+				//await r.gexpPastSpreadsheet(oldTime);
 				await r.updateAllGEXP();
 				await r.notGuildMemberGEXPRemove();
 				data.subtractGEXPPassWeek();
@@ -77,11 +77,11 @@ client.once('ready', () => {
 			await tax.updateUsernames(); //updates members table with up to date usernames
 			try { let response = await r.updateAllGEXP(); r.log(response); }  // updates gexp in member table. wont if theres an error in the weekly past gexp write function
 			catch (err) { r.log(err) };
-			try {
+			/*try {
 				await r.gexpSpreadsheet();
 			} catch(err) {
 				r.log(err)
-			}
+			}*/
 
 			data.getvalue('info', 'fishing', 1).then(async oldXP => { //theoof fishing
 				let newXP = await r.fishingXP();

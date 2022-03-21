@@ -1,12 +1,12 @@
 const v = require('../config.json');
 const i = require('./index.js');
-const creds = require(`../client_secret.json`);
+const g_creds = require(`../client_secret.json`);
 const fs = require(`fs`);
 const data = require('./database.js');
 const tax = require(`./taxfunctions.js`);
 const comp = require(`./compliments.json`);
 const weight = require(`./weightstuff.js`);
-const creds = require(`./creds.json`)
+const creds = require('../creds.json');
 
 // functions that do all the calculations, also speaks with hypixel and mojang apis.
 // doesn't use discord client, only main.js
@@ -70,7 +70,7 @@ function log(message) {
         if (err) return console.error(err);
     });
 }; 
-
+/*
 async function getSplashTime(msg, user) {       //gets time of next splash, and row in spreadsheet that time is on. Different responses depending on user or bot usage.
     let PST = getPST();
     let dow = PST[0];
@@ -79,7 +79,7 @@ async function getSplashTime(msg, user) {       //gets time of next splash, and 
 
     try {
         const doc = new i.gs.GoogleSpreadsheet(`13DnTmrP8d2fk-1p-6t2t-t4HtQOuiWziJZaEkL9ptYA`);      //loading spreadsheet\
-        await doc.useServiceAccountAuth(creds);
+        await doc.useServiceAccountAuth(g_creds);
         await doc.loadInfo();
         const sign = doc.sheetsByIndex[5];      //grabbing "splasher signup" sheet
         rows = await sign.getRows({
@@ -158,7 +158,7 @@ async function getSplashTime(msg, user) {       //gets time of next splash, and 
 async function getSplasher(row) {           //gets name of splasher(s) that have signed up for slash on the given row
     try {
         const doc = new i.gs.GoogleSpreadsheet(`13DnTmrP8d2fk-1p-6t2t-t4HtQOuiWziJZaEkL9ptYA`);
-        await doc.useServiceAccountAuth(creds);
+        await doc.useServiceAccountAuth(g_creds);
         await doc.loadInfo();
         const sign = doc.sheetsByIndex[5];
 
@@ -194,6 +194,7 @@ async function getSplasher(row) {           //gets name of splasher(s) that have
     }
     
 }
+*/
 
 function getPST() {     //converts EST time and day to PST time and day
     let EST = new Date;
@@ -356,9 +357,10 @@ function checkStaff(msg) {
     }
 }
 
+/*
 async function spreadsheetTaxes() {
     const doc = new i.gs.GoogleSpreadsheet(`13DnTmrP8d2fk-1p-6t2t-t4HtQOuiWziJZaEkL9ptYA`);
-    await doc.useServiceAccountAuth(creds);
+    await doc.useServiceAccountAuth(g_creds);
     await doc.loadInfo();
     const sheet = doc.sheetsByIndex[6];
     let array = await data.weeksList();
@@ -384,6 +386,7 @@ async function spreadsheetTaxes() {
     await sheet.saveUpdatedCells();
     log('Updated tax table in spreadsheet.')
 }
+*/
 
 async function fishingXP() {
     let theoof = await hclient.getSkyblockProfileData('aa557d3b09b74d4890778365f1e2ba42');
@@ -544,6 +547,7 @@ async function writePastGEXPWeeks(time) {
     }
 }
 
+/*
 async function gexpPastSpreadsheet() {
     let dataToWrite;
     try {
@@ -554,7 +558,7 @@ async function gexpPastSpreadsheet() {
     }
     const doc = new i.gs.GoogleSpreadsheet(`13DnTmrP8d2fk-1p-6t2t-t4HtQOuiWziJZaEkL9ptYA`);
     console.log(doc);
-    await doc.useServiceAccountAuth(creds);
+    await doc.useServiceAccountAuth(g_creds);
     await doc.loadInfo();
     console.log(doc);
     const sheet = doc.sheetsByIndex[4];
@@ -574,7 +578,7 @@ async function gexpPastSpreadsheet() {
 
 async function gexpSpreadsheet() {
     const doc = new i.gs.GoogleSpreadsheet(`13DnTmrP8d2fk-1p-6t2t-t4HtQOuiWziJZaEkL9ptYA`);
-    await doc.useServiceAccountAuth(creds);
+    await doc.useServiceAccountAuth(g_creds);
     await doc.loadInfo();
     const sheet = doc.sheetsByIndex[3];
     await sheet.loadCells(['A2:E126', 'F3']);
@@ -605,6 +609,7 @@ async function gexpSpreadsheet() {
     await sheet.saveUpdatedCells();
     log('Updated current gexp spreadsheet table.')
 }
+*/
 
 const totalGEXPLeaderboard = (limit) => {
     return new Promise(async (resolve, reject) => {
@@ -2017,8 +2022,8 @@ module.exports.errmsg = errmsg;
 module.exports.calc_xp = calc_xp;
 module.exports.calc_max_xp = calc_max_xp;
 module.exports.log = log;
-module.exports.getSplashTime = getSplashTime;
-module.exports.getSplasher = getSplasher;
+//module.exports.getSplashTime = getSplashTime;
+//module.exports.getSplasher = getSplasher;
 module.exports.getPST = getPST;
 module.exports.uuidrecord = uuidrecord;
 module.exports.verifyign = verifyign;
@@ -2026,14 +2031,14 @@ module.exports.reactions = reactions;
 module.exports.getUsername = getUsername;
 module.exports.getMemberUUIDs = getMemberUUIDs;
 module.exports.checkStaff = checkStaff;
-module.exports.spreadsheetTaxes = spreadsheetTaxes;
+//module.exports.spreadsheetTaxes = spreadsheetTaxes;
 module.exports.fishingXP = fishingXP;
 module.exports.remindDiscordIDs = remindDiscordIDs;
 module.exports.changeRole = changeRole;
 module.exports.updateAllGEXP = updateAllGEXP;
 module.exports.writePastGEXPWeeks = writePastGEXPWeeks;
-module.exports.gexpPastSpreadsheet = gexpPastSpreadsheet;
-module.exports.gexpSpreadsheet = gexpSpreadsheet;
+//module.exports.gexpPastSpreadsheet = gexpPastSpreadsheet;
+//module.exports.gexpSpreadsheet = gexpSpreadsheet;
 module.exports.notGuildMemberGEXPRemove = notGuildMemberGEXPRemove;
 module.exports.GEXPRole = GEXPRole;
 
