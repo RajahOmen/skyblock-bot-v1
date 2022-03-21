@@ -44,7 +44,13 @@ function updateUsernames() {
                     let count = 0;
                     for (entry in rows) {
                         let member = rows[entry];
-                        let username = await r.getUsername(member.uuid)
+                        let username = member.username;
+                        try {
+                            username = await r.getUsername(member.uuid);
+                        } catch(err) {
+                            console.log("ERROR: UPDATE USERNAMES");
+                        }
+
                         if (username != member.username) {
                             count = count + 1;
                             db.run('UPDATE members SET username = ? WHERE uuid = ?', [username, member.uuid], (err) => {
