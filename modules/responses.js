@@ -6,11 +6,12 @@ const data = require('./database.js');
 const tax = require(`./taxfunctions.js`);
 const comp = require(`./compliments.json`);
 const weight = require(`./weightstuff.js`);
+const creds = require(`./creds.json`)
 
 // functions that do all the calculations, also speaks with hypixel and mojang apis.
 // doesn't use discord client, only main.js
 
-const hclient = new i.HypixelAPI('a172a278-6adf-4288-8f0d-90e3b87e4462');
+const hclient = new i.HypixelAPI(creds.hypixel);
 
 // variables and functions
 const delay = () => new Promise(resolve => setTimeout(resolve, 520));
