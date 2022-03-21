@@ -3,6 +3,7 @@ const v = require(`./config.json`);
 const r = require('./modules/responses.js');
 const data = require('./modules/database.js');
 const tax = require('./modules/taxfunctions.js');
+const creds = require('./modules/creds.json')
 
 const client = new i.Discord.Client();
 
@@ -500,4 +501,4 @@ client.on('message', msg => {
 });
 
 
-client.login('NzI4NzA5OTI4NzI5OTY4Njkw.Xv-WAQ.h2-5N2ycLSVQuIWDAcafvLCFO5g');
+client.login(creds.discord);
